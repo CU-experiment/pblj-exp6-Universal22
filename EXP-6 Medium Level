@@ -1,4 +1,4 @@
-Create a program to use lambda expressions and stream operations to filter students scoring above 75%, sort them by marks, and display their names.
+3.Create a program to use lambda expressions and stream operations to filter students scoring above 75%, sort them by marks, and display their names.
 Code:
 import java.util.*;
 import java.util.stream.Collectors;
