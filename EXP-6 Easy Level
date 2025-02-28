@@ -1,4 +1,4 @@
-Write a program to sort a list of Employee objects (name, age, salary) using lambda expressions.
+1.Write a program to sort a list of Employee objects (name, age, salary) using lambda expressions.
 Code:
 import java.util.*;
 import java.util.stream.Collectors;
