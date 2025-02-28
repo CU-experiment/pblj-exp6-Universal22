@@ -1,0 +1,46 @@
+Write a program to sort a list of Employee objects (name, age, salary) using lambda expressions.
+Code:
+import java.util.*;
+import java.util.stream.Collectors;
+class Employee {
+    private String name;
+    private int age;
+    private double salary;
+    public Employee(String name, int age, double salary) {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
+    public String getName() { return name; }
+    public int getAge() { return age; }
+    public double getSalary() { return salary; }
+    @Override
+    public String toString() {
+        return "Employee{name='" + name + "', age=" + age + ", salary=" + salary + "}";
+    }
+}
+public class EmployeeSort {
+    public static void main(String[] args) {
+        List<Employee> employees = Arrays.asList(
+            new Employee("Shreya", 30, 50000),
+            new Employee("Shreyas", 25, 60000),
+            new Employee("Anjali", 35, 40000),
+            new Employee("Ravi", 28, 55000)
+        );
+        List<Employee> sortedByName = employees.stream()
+                .sorted(Comparator.comparing(Employee::getName))
+                .collect(Collectors.toList());
+        System.out.println("Sorted by Name:");
+        sortedByName.forEach(System.out::println);
+        List<Employee> sortedByAge = employees.stream()
+                .sorted(Comparator.comparingInt(Employee::getAge))
+                .collect(Collectors.toList());
+        System.out.println("\nSorted by Age:");
+        sortedByAge.forEach(System.out::println);
+        List<Employee> sortedBySalary = employees.stream()
+                .sorted(Comparator.comparingDouble(Employee::getSalary))
+                .collect(Collectors.toList());
+        System.out.println("\nSorted by Salary:");
+        sortedBySalary.forEach(System.out::println);
+ }
+}
